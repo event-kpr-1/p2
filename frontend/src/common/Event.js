@@ -2,6 +2,11 @@ import React from "react";
 import { baseURL, eventURL } from "../constants/url";
 import { useQuery , useQueryClient} from "@tanstack/react-query";
 import toast from 'react-hot-toast'
+// icons
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";
+import { MdContentCopy } from "react-icons/md";
+
 
 const Event = ({ event }) => {
 	const {data : authAdmin} = useQuery({queryKey : ['authAdmin']})
@@ -65,7 +70,7 @@ const Event = ({ event }) => {
             }}
             style={{ padding: '8px 16px', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '4px' }}
           >
-            Yes
+            <span><FaRegTrashAlt /></span>
           </button>
           <button
             onClick={() => {
@@ -73,7 +78,7 @@ const Event = ({ event }) => {
             }}
             style={{ padding: '8px 16px', backgroundColor: '#f44336', color: 'white', border: 'none', borderRadius: '4px' }}
           >
-            No
+            <span><FaXmark /></span>
           </button>
         </div>
       </div>
@@ -90,11 +95,11 @@ const Event = ({ event }) => {
       { authAdmin._id === event.createdBy._id &&
 
         <button className="flex items-center justify-center w-8 h-8 bg-red-600 text-white  hover:bg-red-700 transition duration-300" onClick={notifyYesNo}>
-        X
+        <span><FaRegTrashAlt /></span>
       </button>
       }
       <button className="flex items-center justify-center w-8 h-8 bg-blue-600 text-white  hover:bg-blue-700 transition duration-300" onClick={handleCopy}>
-        O
+        <span><MdContentCopy /></span>
       </button>
     </div>
   </div>

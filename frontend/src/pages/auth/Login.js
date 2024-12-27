@@ -3,6 +3,10 @@ import {Link} from 'react-router-dom'
 import {baseURL} from '../../constants/url.js'
 import { useMutation , useQueryClient } from '@tanstack/react-query'
 import toast from 'react-hot-toast'
+// icons
+import { SlLogin } from "react-icons/sl";
+
+import { MdEmail , MdPassword ,MdPersonAddAlt1} from "react-icons/md";
 
 const Login = () => {
 
@@ -63,7 +67,8 @@ const Login = () => {
         <form>
           <div className="form-control mb-4">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text"><MdEmail />
+              </span>
             </label>
             <input
               type="email"
@@ -75,7 +80,7 @@ const Login = () => {
           </div>
           <div className="form-control mb-6">
             <label className="label">
-              <span className="label-text">Password</span>
+              <span className="label-text"><MdPassword /></span>
             </label>
             <input
               type="password"
@@ -89,7 +94,7 @@ const Login = () => {
             type="submit"
             className="btn btn-primary w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 border-none"
             onClick={(e)=> loginFn(e)}
-          >
+          ><span><SlLogin /></span>
             Login
           </button>
         </form>
@@ -97,7 +102,7 @@ const Login = () => {
         <Link to='/signup'>
           <button           
             className="btn btn-primary w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 border-none"            
-            >Sign Up
+            ><span><MdPersonAddAlt1 /></span>Sign Up
           </button>
         </Link>
         

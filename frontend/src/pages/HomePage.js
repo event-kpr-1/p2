@@ -3,6 +3,10 @@ import { useMutation , useQueryClient , useQuery } from '@tanstack/react-query'
 import { baseURL } from '../constants/url'
 import {Link} from 'react-router-dom'
 import toast from 'react-hot-toast'
+// icons
+import { HiViewGridAdd } from "react-icons/hi";
+import { MdEventNote } from "react-icons/md";
+import { SlLogout } from "react-icons/sl";
 
 
 
@@ -45,12 +49,12 @@ const HomePage = () => {
         
           <Link to="/create">
             <button className="btn btn-primary text-white w-full mt-4 bg-gradient-to-r from-teal-500 to-green-600 hover:from-teal-600 hover:to-green-700 border-none">
-              + Create Event
+              <span><HiViewGridAdd /></span> Create Event
             </button>
           </Link>
           <Link to="/allevents">
             <button className="btn btn-primary text-white w-full mt-4 bg-gradient-to-r from-teal-500 to-green-600 hover:from-teal-600 hover:to-green-700 border-none">
-              Events
+              <span><MdEventNote size='20' /></span>Events
             </button>
           </Link>
         
@@ -58,7 +62,7 @@ const HomePage = () => {
         <button
           className="btn btn-primary text-white w-full mt-4 bg-gradient-to-r from-teal-500 to-green-600 hover:from-teal-600 hover:to-green-700 border-none"
           onClick={logoutFn}
-        >
+        ><span><SlLogout /></span>
           Logout
         </button>
       </div>

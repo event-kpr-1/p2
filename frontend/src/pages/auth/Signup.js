@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import {baseURL} from '../../constants/url.js'
 import { useQueryClient , useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+// icons
+import { SlLogin } from "react-icons/sl";
+
+import { MdEmail , MdPassword ,MdOutlineDriveFileRenameOutline ,MdPersonAddAlt1} from "react-icons/md";
 
 const Signup = () => {
   const nameRef = useRef();
@@ -74,7 +78,7 @@ const Signup = () => {
       <form>
         <div className="form-control mb-4">
           <label className="label">
-            <span className="label-text">Username</span>
+            <span className="label-text"><MdOutlineDriveFileRenameOutline /></span>
           </label>
           <input
             type="text"
@@ -86,7 +90,8 @@ const Signup = () => {
         </div>
         <div className="form-control mb-4">
           <label className="label">
-            <span className="label-text">Email</span>
+            <span className="label-text"><MdEmail /> 
+            </span>
           </label>
           <input
             type="email"
@@ -98,7 +103,7 @@ const Signup = () => {
         </div>
         <div className="form-control mb-6">
           <label className="label">
-            <span className="label-text">Password</span>
+            <span className="label-text"><MdPassword /></span>
           </label>
           <input
             type="password"
@@ -113,14 +118,14 @@ const Signup = () => {
           type="submit"
           className="btn btn-primary w-full bg-gradient-to-r from-teal-500 to-green-600 hover:from-teal-600 hover:to-green-700 border-none"
           onClick={(e) => SignUpFn(e)}
-        >
+        ><span><MdPersonAddAlt1 /></span>
           Sign Up
         </button>
         <h3 className='mt-2'>Alrady have an account : </h3>
         <Link to = '/login'>
           <button
             className="btn btn-primary w-full bg-gradient-to-r from-teal-500 to-green-600 hover:from-teal-600 hover:to-green-700 border-none"
-          >Login
+          ><span><SlLogin /></span>Login
           </button>
 
         </Link>

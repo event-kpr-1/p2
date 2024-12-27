@@ -2,6 +2,9 @@ import React ,{useRef} from 'react'
 import {baseURL} from '../../constants/url.js'
 import {useMutation} from '@tanstack/react-query'
 import toast from 'react-hot-toast'
+// icons
+import { GrTableAdd } from "react-icons/gr";
+
 
 const EventCreateion = () => {
     const eventNameRef = useRef();
@@ -15,6 +18,13 @@ const EventCreateion = () => {
               eventName : eventNameRef.current.value,
               eventDetails : eventDetailsRef.current.value,
     
+            }
+            if(!data.eventName){
+                toast.error('event name missing')
+                return
+            }else if(!data.eventDetails){
+                toast.error('event details missing')
+                return
             }
             console.log('Data being sent:', JSON.stringify(data));
     
@@ -86,7 +96,7 @@ const EventCreateion = () => {
                             type="submit"
                             className="btn btn-primary w-full py-3 text-white font-semibold bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-600 hover:to-amber-600 rounded-lg transition duration-300 ease-in-out focus:ring-4 focus:ring-amber-500 focus:outline-none"
                         >
-                            CREATE
+                            <span><GrTableAdd /></span>CREATE
                         </button>
                     </div>
                 </form>
