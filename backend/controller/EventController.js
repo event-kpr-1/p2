@@ -2,7 +2,7 @@ import Event from "../model/NewEventModel.js";
 
 export const createEvent = async(req , res) => {
     try {
-        const {eventName , eventDetails } = req.body;
+        const {eventName , eventDetails , eventDate , expectedParticipantCount , eventCoordinators, eventFor , subEvents  } = req.body;
         const createdBy = req.AdminUser._id;
 
         if(!eventName || !eventDetails){
@@ -10,8 +10,13 @@ export const createEvent = async(req , res) => {
         }
 
     const event = new Event({
-        eventName,
-        eventDetails,
+        eventName ,
+        eventDetails ,
+        eventDate : new Date(eventDate) ,
+        expectedParticipantCount ,
+        eventCoordinators,
+        eventFor ,
+        subEvents,
         createdBy
     })
 

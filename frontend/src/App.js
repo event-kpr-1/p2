@@ -52,6 +52,8 @@ const App = () => {
         <Route path='/create' element={authAdmin ? <EventCreateion/> : <Navigate to='/login'/>}/>
         <Route path='/allevents' element={authAdmin ? <AllEventsList/> : <Navigate to='/login'/>}/>
         <Route path='/' element={ authAdmin ? <Home/> : <Navigate to='/login'/>}/>
+
+        <Route path='/create1' element={<EventCreateion/> }/>
       </Routes>
       <Toaster
         toastOptions={{
