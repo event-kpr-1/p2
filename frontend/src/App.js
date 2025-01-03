@@ -31,7 +31,7 @@ const App = () => {
         }
         return resData
       } catch (err) {
-        console.log('error in app.js :' , err.message)
+        console.log('error in app.js :' , err)
         return null;
         
       }
