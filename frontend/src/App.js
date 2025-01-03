@@ -53,7 +53,7 @@ const App = () => {
         <Route path='/allevents' element={authAdmin ? <AllEventsList/> : <Navigate to='/login'/>}/>
         <Route path='/' element={ authAdmin ? <Home/> : <Navigate to='/login'/>}/>
 
-        <Route path='/create1' element={<EventCreateion/> }/>
+        {/* <Route path='/create1' element={<EventCreateion/> }/> */}
       </Routes>
       <Toaster
         toastOptions={{
