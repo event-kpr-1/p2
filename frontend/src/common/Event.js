@@ -10,7 +10,7 @@ import { MdContentCopy } from "react-icons/md";
 
 const Event = ({ event }) => {
 	const {data : authAdmin} = useQuery({queryKey : ['authAdmin']})
-  const eventLink = `${eventURL}/${event._id}/home`
+  const eventLink = `${eventURL}/${event._id}`
   const queryClient = useQueryClient()
 
   const handleCopy = () => {
